@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Track Request</title>
+  <title>ResolveDesk - Track Request</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
@@ -13,10 +13,10 @@
 </head>
 <body>
 <section class="section container">
-  <h1 class="title">TRACK REQUEST</h1>
+  <h1 class="title">ResolveDesk - Track Request</h1>
   <form id="trackForm" class="card" style="margin-top:18px;">
     <label>Ticket ID</label>
-    <input name="ticket_id" placeholder="Enter Ticket ID e.g. ROG-2024-XXXX" style="font-family:'Orbitron';">
+    <input name="ticket_id" placeholder="Enter Ticket ID e.g. RSD-2026-ABC123" style="font-family:'Orbitron';">
     <button class="btn btn-red" style="margin-top:10px;" type="submit">Search</button>
   </form>
   <div id="result" style="margin-top:20px;"></div>

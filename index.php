@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASUS Support Portal</title>
+  <title>ResolveDesk Support Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <div class="scroll-progress"></div>
   <header class="navbar">
     <div class="container nav-wrap">
-      <div class="logo">ASUS SUPPORT<span>.</span></div>
+      <div class="logo">ResolveDesk<span>.</span></div>
       <nav class="nav-links">
         <a href="index.php">Home</a><a href="new-request.php">New Request</a><a href="track-request.php">Track Request</a><a href="#faq">FAQ</a>
       </nav>
@@ -27,8 +27,8 @@
     <canvas id="heroParticles"></canvas>
     <div class="hero-content container">
       <p class="badge">OFFICIAL SUPPORT CENTER</p>
-      <h1 class="glitch">ROG SUPPORT PORTAL</h1>
-      <p class="muted">Get expert help for your ASUS & ROG devices</p>
+      <h1 class="glitch">ResolveDesk Support Portal</h1>
+      <p class="muted">Get expert help for your devices with ResolveDesk</p>
       <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
         <a class="btn btn-red" href="new-request.php">New Request</a>
         <a class="btn btn-gold" href="track-request.php">Track Request</a>
@@ -86,11 +86,11 @@
 
   <footer class="footer">
     <div class="container footer-columns">
-      <div><h3 class="logo">ASUS SUPPORT<span>.</span></h3><p class="muted">Powering elite gaming support with ROG precision.</p></div>
+      <div><h3 class="logo">ResolveDesk<span>.</span></h3><p class="muted">Fast, reliable technical support by ResolveDesk.</p></div>
       <div><h4>Quick Links</h4><p><a href="new-request.php">New Request</a></p><p><a href="track-request.php">Track Request</a></p></div>
-      <div><h4>Contact</h4><p class="muted">support@asus-portal.local</p><p class="muted">+91 1800-000-ROG</p></div>
+      <div><h4>Contact</h4><p class="muted">support@resolvedesk.local</p><p class="muted">+91 1800-000-RSD</p></div>
     </div>
-    <div class="container footer-bottom">© 2024 ASUS Support Portal</div>
+    <div class="container footer-bottom">© 2026 ResolveDesk Support Portal</div>
   </footer>
 
   <script src="assets/js/main.js"></script>

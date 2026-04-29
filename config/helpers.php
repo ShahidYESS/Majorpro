@@ -24,7 +24,7 @@ function json_response(bool $success, string $message, array $data = [], int $co
 
 function generate_ticket_id(): string
 {
-    return 'ROG-' . date('Y') . '-' . strtoupper(substr(uniqid(), -6));
+    return 'RSD-' . date('Y') . '-' . strtoupper(substr(uniqid(), -6));
 }
 
 function csrf_token(): string

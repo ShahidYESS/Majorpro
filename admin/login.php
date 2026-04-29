@@ -27,13 +27,13 @@ $token = csrf_token();
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Login</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ResolveDesk Admin Login</title>
   <link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/components.css">
 </head>
 <body>
 <section class="section container" style="min-height:100vh;display:grid;place-items:center;">
   <form class="card" method="post" style="max-width:420px;width:100%;">
-    <h2 class="title">ADMIN LOGIN</h2>
+    <h2 class="title">ResolveDesk Admin Login</h2>
     <p class="muted">Default seed: admin / admin123 (change in production)</p>
     <?php if ($error): ?><p style="color:#ff4d4d;"><?= $error ?></p><?php endif; ?>
     <input type="hidden" name="csrf_token" value="<?= $token ?>">

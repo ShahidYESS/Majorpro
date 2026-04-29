@@ -1,12 +1,12 @@
-CREATE DATABASE IF NOT EXISTS asus_support_db
+CREATE DATABASE IF NOT EXISTS resolvedesk_support_db
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE asus_support_db;
+USE resolvedesk_support_db;
 
 CREATE TABLE IF NOT EXISTS requests (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  ticket_id VARCHAR(12) NOT NULL UNIQUE,
+  ticket_id VARCHAR(20) NOT NULL UNIQUE,
   request_type ENUM('enquiry', 'repair') NOT NULL,
   full_name VARCHAR(100) NOT NULL,
   email VARCHAR(150) NOT NULL,

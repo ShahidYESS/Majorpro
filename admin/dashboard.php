@@ -23,12 +23,12 @@ $rows = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Dashboard</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ResolveDesk Admin Dashboard</title>
   <link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/components.css">
 </head>
 <body>
 <section class="section container">
-  <h1 class="title">DASHBOARD</h1>
+  <h1 class="title">ResolveDesk Dashboard</h1>
   <p class="muted">Welcome, <?= htmlspecialchars($_SESSION['admin_username'] ?? 'admin') ?></p>
   <div class="grid-4">
     <div class="card"><h3><?= $counts['total'] ?></h3><p>Total</p></div>

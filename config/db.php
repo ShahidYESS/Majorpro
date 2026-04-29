@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 $host = '127.0.0.1';
-$db = 'asus_support_db';
+$db = 'resolvedesk_support_db';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
