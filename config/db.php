@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+$conn = new mysqli('127.0.0.1', 'root', '', 'resolvedesk_support_db');
+
 $host = '127.0.0.1';
 $db = 'resolvedesk_support_db';
 $user = 'root';
