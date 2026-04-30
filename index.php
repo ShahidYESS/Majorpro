@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/config/helpers.php'; ?>
+<?php
+require_once __DIR__ . '/config/helpers.php';
+$user = current_user();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,11 @@
       <div class="logo">ResolveDesk<span>.</span></div>
       <nav class="nav-links">
         <a href="index.php">Home</a><a href="new-request.php">New Request</a><a href="track-request.php">Track Request</a><a href="#faq">FAQ</a>
+        <?php if ($user): ?>
+          <a href="logout.php">Logout</a>
+        <?php else: ?>
+          <a href="login.php">Login</a><a href="signup.php">Sign Up</a>
+        <?php endif; ?>
       </nav>
     </div>
   </header>
@@ -29,6 +37,7 @@
       <p class="badge">OFFICIAL SUPPORT CENTER</p>
       <h1 class="glitch">ResolveDesk Support Portal</h1>
       <p class="muted">Get expert help for your devices with ResolveDesk</p>
+      <?php if ($user): ?><p class="muted">Welcome back, <?= htmlspecialchars($user['name']) ?></p><?php endif; ?>
       <p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
         <a class="btn btn-red" href="new-request.php">New Request</a>
         <a class="btn btn-gold" href="track-request.php">Track Request</a>

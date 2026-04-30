@@ -3,6 +3,10 @@ declare(strict_types=1);
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../config/helpers.php';
 
+if (!user_logged_in()) {
+    json_response(false, 'Please login to submit a request.', [], 401);
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     json_response(false, 'Invalid method.', [], 405);
 }
@@ -54,13 +58,15 @@ if (!empty($_FILES['attachment']['name'])) {
 }
 
 $ticketId = generate_ticket_id();
+$user = current_user();
 
 $stmt = $pdo->prepare('INSERT INTO requests
-  (ticket_id, request_type, full_name, email, phone, country, product_category, product_model, serial_number, subject, description, priority, file_path)
+  (user_id, ticket_id, request_type, full_name, email, phone, country, product_category, product_model, serial_number, subject, description, priority, file_path)
   VALUES
-  (:ticket_id, :request_type, :full_name, :email, :phone, :country, :product_category, :product_model, :serial_number, :subject, :description, :priority, :file_path)');
+  (:user_id, :ticket_id, :request_type, :full_name, :email, :phone, :country, :product_category, :product_model, :serial_number, :subject, :description, :priority, :file_path)');
 
 $stmt->execute([
+    ':user_id' => $user['id'],
     ':ticket_id' => $ticketId,
     ':request_type' => $requestType,
     ':full_name' => $fullName,

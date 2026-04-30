@@ -48,6 +48,32 @@ function admin_guard(): void
     }
 }
 
+function user_logged_in(): bool
+{
+    return !empty($_SESSION['user_logged_in']) && !empty($_SESSION['user_id']);
+}
+
+function current_user(): ?array
+{
+    if (!user_logged_in()) {
+        return null;
+    }
+
+    return [
+        'id' => (int) ($_SESSION['user_id'] ?? 0),
+        'name' => (string) ($_SESSION['user_name'] ?? ''),
+        'email' => (string) ($_SESSION['user_email'] ?? '')
+    ];
+}
+
+function user_guard(): void
+{
+    if (!user_logged_in()) {
+        header('Location: /login.php');
+        exit;
+    }
+}
+
 function status_color(string $status): string
 {
     return match ($status) {

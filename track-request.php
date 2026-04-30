@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/config/helpers.php'; ?>
+<?php
+require_once __DIR__ . '/config/helpers.php';
+$user = current_user();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,19 @@
   <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+<header class="navbar">
+  <div class="container nav-wrap">
+    <div class="logo">ResolveDesk<span>.</span></div>
+    <nav class="nav-links">
+      <a href="index.php">Home</a><a href="new-request.php">New Request</a><a href="track-request.php">Track Request</a>
+      <?php if ($user): ?>
+        <a href="logout.php">Logout</a>
+      <?php else: ?>
+        <a href="login.php">Login</a><a href="signup.php">Sign Up</a>
+      <?php endif; ?>
+    </nav>
+  </div>
+</header>
 <section class="section container">
   <h1 class="title">ResolveDesk - Track Request</h1>
   <form id="trackForm" class="card" style="margin-top:18px;">

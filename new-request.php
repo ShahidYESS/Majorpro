@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/config/helpers.php';
+user_guard();
+$user = current_user();
 $token = csrf_token();
 ?>
 <!DOCTYPE html>
@@ -16,8 +18,17 @@ $token = csrf_token();
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
+<header class="navbar">
+  <div class="container nav-wrap">
+    <div class="logo">ResolveDesk<span>.</span></div>
+    <nav class="nav-links">
+      <a href="index.php">Home</a><a href="new-request.php">New Request</a><a href="track-request.php">Track Request</a><a href="logout.php">Logout</a>
+    </nav>
+  </div>
+</header>
 <div class="container section">
   <h1 class="title">ResolveDesk - New Request</h1>
+  <p class="muted">Logged in as <?= htmlspecialchars($user['name']) ?> (<?= htmlspecialchars($user['email']) ?>)</p>
   <form id="requestForm" enctype="multipart/form-data" class="card" style="margin-top:20px;">
     <input type="hidden" name="csrf_token" value="<?= $token ?>">
     <input type="hidden" name="request_type" value="repair">
@@ -34,8 +45,8 @@ $token = csrf_token();
         <div class="card type-card" data-value="enquiry">💬 Product Enquiry</div>
       </div>
       <div class="grid-3" style="margin-top:14px;">
-        <div><label>Full Name</label><input required name="full_name"></div>
-        <div><label>Email</label><input required name="email" type="email"></div>
+        <div><label>Full Name</label><input required name="full_name" value="<?= htmlspecialchars($user['name']) ?>"></div>
+        <div><label>Email</label><input required name="email" type="email" value="<?= htmlspecialchars($user['email']) ?>"></div>
         <div><label>Phone</label><input required name="phone"></div>
       </div>
       <div style="margin-top:10px;"><label>Country</label><select name="country"><option>India</option><option>USA</option><option>UK</option><option>Other</option></select></div>
